@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepakEvent Planners</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: Arial; margin: 0; padding: 0; }
+    
+    /* 1. BANNER */
+    .banner { 
+      background-image: url('/assets/banner-rqKgLUk0.jpg');
+      background-size: cover; 
+      background-position: center;
+      color: white; 
+      text-align: center; 
+      padding: 120px 20px;
+    }
+    .banner h1 { 
+      font-family: 'Playfair Display', serif;
+      font-size: 60px; 
+      margin: 0; 
+      color: #FFD700;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+      letter-spacing: 2px;
+    }
+    .banner p { 
+      font-size: 22px; 
+      color: #FFEB3B;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8); 
+      margin-top: 10px;
+    }
+    
+    /* 2. SERVICES - ISKE PICHE BHI WAHI BANNER PHOTO */
+    .services { 
+      padding: 50px 20px; 
+      text-align: center; 
+      background-image: url('/assets/banner-rqKgLUk0.jpg'); /* UNSPLASH HATAKE TERI WALI LAGA DI */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* PREMIUM EFFECT */
+    }
+    .services h2 { color: #fff; font-size: 36px; font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px #000; }
+    
+    .cards { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 30px; }
+    
+    /* CLICKABLE WHITE BOX */
+    .card { 
+      background: rgba(255,255,255,0.95); /* THODA TRANSPARENT TA KI PICHE PHOTO DIKHE */
+      padding: 25px; 
+      border-radius: 15px; 
+      width: 270px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer; /* HAATH WALA CURSOR */
+      transition: 0.3s ease;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    
+    .card h3 { 
+      color: #e91e63; 
+      font-size: 26px; 
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .card p { 
+      font-size: 15px; 
+      line-height: 1.8; 
+      color: #333;
+      font-weight: 600;
+    }
+    .card p span { color: #e91e63; font-weight: 700; }
+
+    /* GALLERY POPUP */
+    .gallery-popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; padding: 40px 20px; overflow-y: auto; }
+    .gallery-content { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; max-width: 1300px; margin: auto; }
+    .gallery-content img { width: 100%; border-radius: 10px; border: 3px solid #FFD700; transition: 0.3s; cursor: pointer; }
+    .gallery-content img:hover { transform: scale(1.03); }
+    .close-btn { color: white; font-size: 50px; position: fixed; top: 10px; right: 30px; cursor: pointer; z-index: 1001; font-weight: bold; }
+    .gallery-title { color: #FFD700; text-align: center; font-size: 36px; margin-bottom: 30px; font-family: 'Poppins'; }
+
+    /* BADI PHOTO KE LIYE LIGHTBOX */
+    .lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); justify-content: center; align-items: center; }
+    .lightbox img { max-width: 90%; max-height: 90%; border: 5px solid #FFD700; border-radius: 15px; }
+
+    /* 3. CONTACT */
+    .contact { 
+      background: #222; 
+      color: white; 
+      padding: 40px 20px; 
+      text-align: center; 
+      width: 100%;
+      margin-top: 40px;
+    }
+    .contact h3 { font-size: 28px; margin-bottom: 15px; }
+    .contact p { font-size: 16px; margin: 8px 0; }
+    
+    .btn-group { margin-top: 20px; display: flex; gap: 15px; justify-content: center; }
+    .btn { 
+      padding: 14px 28px; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .btn-call { background: #28a745; }
+    .btn-whatsapp { background: #25D366; }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <h1>Deepak Event Planners</h1>
+    <p>Har Khushi Ko Yaadgar Banayenge</p>
+  </div>
+<!-- FINAL ROYAL TRUST BANNER WITH FLOWER CORNERS -->
+<div style="background: linear-gradient(to right, #fffbf0, #ffffff, #fffbf0); padding: 0 20px; height: 145px; display: flex; justify-content: center; align-items: center; gap: 25px; border-top: 3px solid #FFD700; border-bottom: 3px solid #FFD700; position: relative; overflow: hidden; box-shadow: inset 0 0 20px rgba(255,215,0,0.15);">
+
+<!-- ASLI FLOWER LEFT -->
+<img src="/flower_corner.jpeg" style="position: absolute; left: 10px; top: 5px; width: 145px; z-index: 5; mix-blend-mode: multiply;">
+
+<!-- ASLI FLOWER RIGHT -->
+<img src="/flower_corner.jpeg" style="position: absolute; right: 10px; top: 5px; width: 145px; z-index: 5; mix-blend-mode: multiply; transform: scaleX(-1);">
+  <!-- Golden Glow behind logo -->
+  <div style="position: absolute; left: 32%; top: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; background: radial-gradient(circle, rgba(255,215,0,0.25) 0%, transparent 70%);"></div>
+
+  <img src="/logo.jpeg" style="width: 130px; height: 130px; border-radius: 50%; border: none; object-fit: cover; display: block; box-shadow: 0 0 15px rgba(255,215,0,0.6); z-index: 2;">
+
+  <div style="z-index: 2;">
+    <div style="font-family: 'Georgia', serif; font-size: 32px; font-weight: 900; color: #1a1a1a; letter-spacing: 0.5px; text-shadow: 1px 1px 0px #FFD700; line-height: 1.1;">Deepak Event Planners</div>
+    
+    <div style="font-family: 'cursive'; font-size: 15px; color: #8a6d3b; font-style: italic; font-weight: 600; letter-spacing: 1px; margin-top: 2px;">✦ Har Khushi Ko Yaadgar Banayenge ✦</div>
+    
+    <div style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
+      <span style="background: linear-gradient(to right, #111, #333); color: #FFD700; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: bold; border: 1px solid #FFD700; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">👑 Reg. No. : UDYAM-UP-27-0075879</span>
+      <span style="background: #e8f5e9; color: #1b5e20; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; border: 1px solid #4caf50;">✓ MSME VERIFIED</span>
+    </div>
+  </div>
+
+</div>
+<!-- HAMARI SERVICES - FULL BACKGROUND, NO WHITE PATTI -->
+<div style="width:100vw; margin-left: calc(-50vw + 50%); background: url('/event_bg.jpeg'); background-size: cover; background-position: center; padding:60px 20px; margin-top:0;">
+
+  <h2 style="text-align:center; font-size:42px; font-weight:900; margin:0; color:white; text-shadow: 0 3px 12px rgba(0,0,0,0.8);">Hamari Services</h2>
+  <div style="width:130px; height:5px; background: linear-gradient(to right, #ff1744, #ffea00, #00e5ff); margin:12px auto 40px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.6);"></div>
+
+  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px;">
+
+    <div class="card" onclick="openGallery('shadi','Shadi')" style="background:rgba(255,255,255,0.96); backdrop-filter: blur(5px); border-radius:16px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,0.35); border-top:5px solid #e91e63; cursor:pointer; text-align:center;">
+      <h3 style="color:#e91e63;">💍 Shadi</h3>
+      <p style="color:#333; font-size:14px;">Full Wedding Planning, Stage Decoration, Catering</p>
+    </div>
+
+    <div class="card" onclick="openGallery('birthday','Birthday')" style="background:rgba(255,255,255,0.96); backdrop-filter: blur(5px); border-radius:16px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,0.35); border-top:5px solid #ff9800; cursor:pointer; text-align:center;">
+      <h3 style="color:#ff9800;">🎂 Birthday</h3>
+      <p style="color:#333; font-size:14px;">Theme Party, Balloon Decoration, Cake</p>
+    </div>
+
+    <div class="card" onclick="openGallery('corporate','Corporate')" style="background:rgba(255,255,255,0.96); backdrop-filter: blur(5px); border-radius:16px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,0.35); border-top:5px solid #2196f3; cursor:pointer; text-align:center;">
+      <h3 style="color:#2196f3;">🏢 Corporate</h3>
+      <p style="color:#333; font-size:14px;">Office Events, Conferences, Product Launch</p>
+    </div>
+
+    <div class="card" onclick="openGallery('other','Other Events')" style="background:rgba(255,255,255,0.96); backdrop-filter: blur(5px); border-radius:16px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,0.35); border-top:5px solid #4caf50; cursor:pointer; text-align:center;">
+      <h3 style="color:#4caf50;">🎉 Other Events</h3>
+      <p style="color:#333; font-size:14px;">Engagement, Anniversary, Baby Shower</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT - NEW PRO DESIGN -->
+<div style="width:100vw; margin-left:calc(-50vw + 50%); background: radial-gradient(circle at 20% 20%, #1e3a8a 0%, #0f172a 50%, #1e1b4b 100%); padding:60px 20px; margin-top:0; box-sizing:border-box; position:relative; overflow:hidden; border-top:3px solid #38bdf8;">
+  <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><circle cx=%2250%22 cy=%2250%22 r=%221%22 fill=%22white%22 opacity=%220.1%22/></svg>'); opacity:0.3;"></div>
+  
+  <div style="max-width:900px; margin:0 auto; text-align:center; position:relative; z-index:2;">
+    <h2 style="font-size:42px; font-weight:900; margin:0 0 10px; color:white; text-transform:uppercase; letter-spacing:2px; text-shadow:0 2px 10px rgba(0,0,0,0.5);">CONTACT KAREIN</h2>
+    <div style="width:120px; height:5px; background:linear-gradient(to right, #f472b6, #facc15, #38bdf8); margin:0 auto 30px; border-radius:5px;"></div>
+    
+    <p style="margin:15px 0; font-size:20px; font-weight:600; color:#e2e8f0;">📍 Himayunpur, Firozabad, Uttar Pradesh</p>
+    <p style="margin:15px 0; font-size:19px; font-weight:600; color:#e2e8f0; line-height:1.6;">📞 9917374068, 6396892572, 7500972831, 9837930282</p>
+    <p style="margin:15px 0 35px; font-size:18px; font-weight:600; color:#e2e8f0;">✉️ bhupendrakhatik8092003@gmail.com</p>
+    
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+      <a href="tel:6396892572" style="background:linear-gradient(135deg, #22c55e, #16a34a); color:white; padding:16px 40px; border-radius:50px; text-decoration:none; font-weight:800; font-size:18px; box-shadow:0 8px 20px rgba(34,197,94,0.4); transition:0.3s;">📞 Call Now</a>
+      <a href="https://wa.me/916396892572" style="background:linear-gradient(135deg, #0ea5e9, #0284c7); color:white; padding:16px 40px; border-radius:50px; text-decoration:none; font-weight:800; font-size:18px; box-shadow:0 8px 20px rgba(14,165,233,0.4); transition:0.3s;">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+<div id="galleryPopup" class="gallery-popup">
+  <span class="close-btn" onclick="closeGallery()">&times;</span>
+  <h2 id="galleryTitle" class="gallery-title"></h2>
+  <div id="galleryContent" class="gallery-content"></div>
+</div>
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+  <img id="lightboxImg" src="" style="max-width:90%; max-height:90%;">
+</div>
+
+<script>
+function openGallery(folder, title) {
+  document.getElementById('galleryPopup').style.display = 'block';
+  document.getElementById('galleryTitle').innerText = title + " Gallery";
+  let galleryHTML = '';
+  for(let i = 1; i <= 10000; i++){
+    galleryHTML += `<img src="./gallery/${folder}/${i}.jpg" loading="lazy" onerror="this.remove()" alt="${title} ${i}" onclick="openLightbox(this.src)">`;
+  }
+  document.getElementById('galleryContent').innerHTML = galleryHTML;
+  document.body.style.overflow = 'hidden';
+}
+  function closeGallery() {
+    document.getElementById('galleryPopup').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") { closeGallery(); document.getElementById('lightbox').style.display='none'; }
+  });
+</script>
+
+</body>
+</html>
