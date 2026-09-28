@@ -122,30 +122,34 @@
     .btn-call { background: #28a745; }
     .btn-whatsapp { background: #25D366; }
 
-/* PHONE FIX - FINAL */
 @media (max-width: 700px) {
-  div[style*="height: 110px"] {
+  div[style*="height: 145px"] {
     height: auto !important;
     flex-direction: column !important;
-    padding: 5px 5px 10px 5px !important;
+    padding: 5px 5px 12px 5px !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   img[src*="flower_corner"] {
-    width: 145px !important;
-    top: 0px !important;
+    width: 155px !important;
   }
-  div[style*="radial-gradient"] {
+  div[style*="left: 32%"] {
     position: relative !important;
     left: auto !important;
     top: auto !important;
     transform: none !important;
-    width: 190px !important;
-    height: 190px !important;
-    margin: -5px auto 8px auto !important;
+    width: 185px !important;
+    height: 185px !important;
+    margin: 0 auto 8px auto !important;
     order: -1 !important;
   }
-  div[style*="radial-gradient"] img {
-    width: 175px !important;
-    height: 175px !important;
+  div[style*="left: 32%"] img {
+    width: 170px !important;
+    height: 170px !important;
+  }
+  div[style*="z-index: 2"] {
+    text-align: center !important;
+    width: 100% !important;
   }
 }
 </style>
@@ -161,10 +165,10 @@
 <div style="background: linear-gradient(to right, #fffbf0, #ffffff, #fffbf0); padding: 0 20px; height: 145px; display: flex; justify-content: center; align-items: center; gap: 25px; border-top: 3px solid #FFD700; border-bottom: 3px solid #FFD700; position: relative; overflow: hidden; box-shadow: inset 0 0 20px rgba(255,215,0,0.15);">
 
 <!-- ASLI FLOWER LEFT -->
-<img src="/deepakevent/flower_corner.jpeg" style="position: absolute; left: 10px; top: 5px; width: 195px; z-index: 5; mix-blend-mode: multiply;">
+<img src="/deepakevent/flower_corner.jpeg" style="position: absolute; left: 10px; top: 5px; width: 145px; z-index: 5; mix-blend-mode: multiply;">
 
 <!-- ASLI FLOWER RIGHT -->
-<img src="/deepakevent/flower_corner.jpeg" style="position: absolute; right: 10px; top: 5px; width: 195px; z-index: 5; mix-blend-mode: multiply; transform: scaleX(-1);">
+<img src="/deepakevent/flower_corner.jpeg" style="position: absolute; right: 10px; top: 5px; width: 145px; z-index: 5; mix-blend-mode: multiply; transform: scaleX(-1);">
   <!-- Golden Glow behind logo -->
   <div style="position: absolute; left: 32%; top: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; background: radial-gradient(circle, rgba(255,215,0,0.25) 0%, transparent 70%);"></div>
 
