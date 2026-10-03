@@ -160,19 +160,43 @@ div[style*="left: 32%"] img {
     <h1>Deepak Event Planners</h1>
     <p>Har Khushi Ko Yaadgar Banayenge</p>
   </div>
- <!-- FINAL BANNER - PURANA LOGO BADA + TOP TOUCH -->
-<div style="background: #fffef8; padding: 5px 20px 15px 20px; display: flex; justify-content: center; align-items: center; position: relative; border-top: 5px solid #FFD700; border-bottom: 5px solid #FFD700;">
+ <!-- RESPONSIVE BANNER - LAPTOP SAME, PHONE FLOWER CHHOTA -->
+<style>
+  .desktop-banner { display: flex; }
+  .mobile-banner { display: none; }
+  @media (max-width: 768px) {
+    .desktop-banner { display: none !important; }
+    .mobile-banner { display: flex !important; }
+  }
+</style>
 
+<!-- LAPTOP - Jaisa hai waisa -->
+<div class="desktop-banner" style="background: #fffef8; padding: 5px 20px 15px 20px; justify-content: center; align-items: center; position: relative; border-top: 5px solid #FFD700; border-bottom: 5px solid #FFD700; flex-direction: column;">
   <img src="/deepakevent/flower_corner.jpeg" style="position: absolute; left: 0; top: 0; width: 250px; z-index: 1;">
   <img src="/deepakevent/flower_corner.jpeg" style="position: absolute; right: 0; top: 0; width: 250px; z-index: 1; transform: scaleX(-1);">
-
   <div style="text-align: center; display: flex; flex-direction: column; align-items: center; z-index: 2; width: 100%;">
-    <img src="/deepakevent/logo.jpeg" style="width: 390px; height: 390px; border-radius: 50%; object-fit: cover; margin-top: -5px; margin-bottom: 12px; border: 4px solid gold; box-shadow: 0 0 30px rgba(255,215,0,0.8);">
+    <img src="/deepakevent/logo.jpeg" style="width: 360px; height: 360px; border-radius: 50%; object-fit: cover; margin-top: -5px; margin-bottom: 12px; border: 4px solid gold; box-shadow: 0 0 30px rgba(255,215,0,0.8);">
     <div style="font-family: Georgia, serif; font-size: 54px; font-weight: 900; color: #1a1a1a; text-shadow: 2px 2px 0px #FFD700;">Deepak Event Planners</div>
     <div style="font-family: cursive; font-size: 20px; color: #8a6d3b; font-style: italic; margin-top: 5px;">✦ Har Khushi Ko Yaadgar Banayenge ✦</div>
     <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center; width: 92%;">
       <span style="flex: 1; max-width: 580px; background: #111; color: #FFD700; padding: 12px 10px; border-radius: 30px; font-size: 18px; font-weight: 800; border: 1.5px solid gold; text-align: center;">👑 Reg. No. : UDYAM-UP-27-0075879</span>
       <span style="background: #e8f5e9; color: #1b5e20; padding: 10px 18px; border-radius: 30px; font-size: 14px; font-weight: 800; border: 1.5px solid #4caf50;">✓ MSME VERIFIED</span>
+    </div>
+  </div>
+</div>
+
+<!-- PHONE - DUSRE PHOTO JESA, FLOWER CHHOTA (90px) -->
+<div class="mobile-banner" style="background: #fffef8; padding: 10px; justify-content: center; align-items: center; position: relative; border-top: 4px solid #FFD700; border-bottom: 4px solid #FFD700; flex-direction: column;">
+  <div style="position: relative; width: 100%; height: 100px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+    <img src="/deepakevent/flower_corner.jpeg" style="position: absolute; left: 0; top: 0; width: 100%; height: 90px; object-fit: cover;">
+    <img src="/deepakevent/logo.jpeg" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 15px rgba(0,0,0,0.3); z-index: 2; background: white;">
+  </div>
+  <div style="text-align: center; margin-top: 10px;">
+    <div style="font-family: Georgia, serif; font-size: 32px; font-weight: 900; color: #1a1a1a; line-height: 1;">Deepak Event Planners</div>
+    <div style="font-family: cursive; font-size: 14px; color: #8a6d3b; font-style: italic; margin-top: 5px;">✦ Har Khushi Ko Yaadgar Banayenge ✦</div>
+    <div style="margin-top: 10px; display: flex; gap: 6px; justify-content: center;">
+      <span style="background: #111; color: #FFD700; padding: 8px; border-radius: 20px; font-size: 11px; font-weight: 800; border: 1.5px solid gold;">👑 Reg. No. : UDYAM-UP-27-0075879</span>
+      <span style="background: #e8f5e9; color: #1b5e20; padding: 8px 10px; border-radius: 20px; font-size: 10px; font-weight: 800; border: 1.5px solid #4caf50;">✓ MSME VERIFIED</span>
     </div>
   </div>
 </div>
