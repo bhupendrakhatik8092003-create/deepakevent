@@ -320,5 +320,21 @@ window.addEventListener('popstate', function() {
   });
 </script>
 
+<audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/audio/2022/10/30/audio_8ef06cc794.mp3"></audio>
+<button id="musicBtn" onclick="toggleMusic()" style="position:fixed; bottom:20px; right:20px; z-index:9999; background:linear-gradient(135deg,#FFD700,#FFA500); border:none; width:50px; height:50px; border-radius:50%; font-size:22px; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.3);">🔊</button>
+<script>
+  const music = document.getElementById('bgMusic');
+  music.volume = 0.35;
+  let isPlaying = false;
+  window.addEventListener('load', () => { music.play().then(()=>{isPlaying=true;}).catch(()=>{}); });
+  document.body.addEventListener('click', () => { if(!isPlaying){ music.play(); isPlaying=true; } }, {once:true});
+  function toggleMusic(){
+    const btn = document.getElementById('musicBtn');
+    if(isPlaying){ music.pause(); btn.innerText='🔇'; }
+    else { music.play(); btn.innerText='🔊'; }
+    isPlaying = !isPlaying;
+  }
+</script>
+
 </body>
 </html>
