@@ -267,7 +267,10 @@ div[style*="left: 32%"] img {
   </div>
 </div>
 <div id="galleryPopup" class="gallery-popup">
-  <span class="close-btn" onclick="closeGallery()">&times;</span>
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 15px; background:rgba(0,0,0,0.85); position:sticky; top:0; z-index:10;">
+  <button onclick="closeGallery()" style="background:#fff; color:#000; border:none; padding:6px 14px; border-radius:20px; font-weight:bold; cursor:pointer;">← Home</button>
+  <button onclick="closeGallery()" style="background:transparent; color:#fff; border:none; font-size:28px; cursor:pointer;">✕</button>
+</div>
   <h2 id="galleryTitle" class="gallery-title"></h2>
   <div id="galleryContent" class="gallery-content"></div>
 </div>
@@ -281,15 +284,31 @@ function openGallery(folder, title) {
   document.getElementById('galleryTitle').innerText = title + " Gallery";
   let galleryHTML = '';
   for(let i = 1; i <= 10000; i++){
-    galleryHTML += `<img src="./gallery/${folder}/${i}.jpg" loading="lazy" onerror="this.remove()" alt="${title} ${i}" onclick="openLightbox(this.src)">`;
+    galleryHTML += `<img src="./gallery/${folder}/${i}.jpg" loading="lazy" onclick="openLightbox(this.src)" onerror="this.style.display='none'">`;
   }
   document.getElementById('galleryContent').innerHTML = galleryHTML;
   document.body.style.overflow = 'hidden';
+  history.pushState({popup: true}, '', '#' + folder);
 }
-  function closeGallery() {
-    document.getElementById('galleryPopup').style.display = 'none';
+
+function closeGallery() {
+  document.getElementById('galleryPopup').style.display = 'none';
+  document.body.style.overflow = 'auto';
+  if(location.hash){
+    history.back();
+  }
+}
+
+window.addEventListener('popstate', function() {
+  const popup = document.getElementById('galleryPopup');
+  const lightbox = document.getElementById('lightbox');
+  if(lightbox.style.display === 'flex'){
+    lightbox.style.display = 'none';
+  } else if(popup.style.display === 'block'){
+    popup.style.display = 'none';
     document.body.style.overflow = 'auto';
   }
+});
 
   function openLightbox(src) {
     document.getElementById('lightboxImg').src = src;
