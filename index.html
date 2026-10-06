@@ -320,7 +320,7 @@ window.addEventListener('popstate', function() {
   });
 </script>
 
-<audio id="bgMusic" loop preload="auto" crossorigin="anonymous" src="https://cdn.pixabay.com/audio/2024/12/02/audio_49a2d6d0f0.mp3"></audio>
+><audio id="bgMusic" loop preload="auto" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
 <button id="musicBtn" onclick="toggleMusic()" style="position:fixed; bottom:20px; right:20px; z-index:9999; background:linear-gradient(135deg,#FFD700,#FFA500); border:none; width:50px; height:50px; border-radius:50%; font-size:22px; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.3);">🔇</button>
 <script>
   const music = document.getElementById('bgMusic');
@@ -328,13 +328,8 @@ window.addEventListener('popstate', function() {
   music.volume = 0.8;
   let isPlaying = false;
   function toggleMusic(){
-    if(isPlaying){
-      music.pause();
-      btn.innerText='🔇';
-      isPlaying=false;
-    } else {
-      music.play().then(()=>{ btn.innerText='🔊'; isPlaying=true; }).catch(e=>{ alert('Browser ne roka: '+e.message); });
-    }
+    if(isPlaying){ music.pause(); btn.innerText='🔇'; isPlaying=false; }
+    else { music.play().then(()=>{ btn.innerText='🔊'; isPlaying=true; }); }
   }
   document.addEventListener('click', function firstClick(){
     if(!isPlaying) toggleMusic();
