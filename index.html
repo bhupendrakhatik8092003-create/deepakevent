@@ -320,22 +320,26 @@ window.addEventListener('popstate', function() {
   });
 </script>
 
-<audio id="bgMusic" loop preload="auto" crossorigin="anonymous" src="https://cdn.pixabay.com/download/audio/2022/06/07/audio_b9bd4170e8.mp3?filename=happy-wedding-113850.mp3"></audio>
-<button id="musicBtn" onclick="toggleMusic()" style="position:fixed; bottom:20px; right:20px; z-index:9999; background:linear-gradient(135deg,#FFD700,#FFA500); border:none; width:50px; height:50px; border-radius:50%; font-size:22px; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.3);">🔇</button>
+<audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/audio/2022/06/07/audio_b9bd4170e8.mp3"></audio>
+<button id="musicBtn" onclick="toggleMusic()" style="position:fixed; bottom:80px; right:30px; z-index:99999; background:#FFD700; border:none; width:55px; height:55px; border-radius:50%; font-size:26px; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.4);">🔇</button>
 <script>
   const music = document.getElementById('bgMusic');
   const btn = document.getElementById('musicBtn');
   music.volume = 0.5;
   let isPlaying = false;
   function toggleMusic(){
-    if(isPlaying){ music.pause(); btn.innerText='🔇'; isPlaying=false; }
-    else { music.play().then(()=>{ btn.innerText='🔊'; isPlaying=true; }).catch(e=>{ console.log(e); }); }
+    if(isPlaying){
+      music.pause();
+      btn.textContent='🔇';
+      isPlaying=false;
+    } else {
+      music.play().then(()=>{ btn.textContent='🔊'; isPlaying=true; });
+    }
   }
-  document.addEventListener('click', function firstClick(){
+  document.addEventListener('click', function f(){
     if(!isPlaying) toggleMusic();
-    document.removeEventListener('click', firstClick);
+    document.removeEventListener('click', f);
   });
 </script>
-
 </body>
 </html>
